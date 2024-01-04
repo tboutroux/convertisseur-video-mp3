@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+header {
+    background-color: #101314;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+header div a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header div a img {
+    width: 50px;
+}
+
+header div h1 {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORM */
+
+.error-msg, form, .download, .loading {
+    width: 100%;
+    max-width: 500px;
+    margin: 10vh auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    display: none;
+}
+
+form label, .download .download-text {
+    font-size: 1.2rem;
+    color: #101314;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #101314;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    gap: 2vw;
+}
+
+form button, .download .buttons a button, .download .buttons .convert-another {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #101314;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+p {
+    color: rgba(0, 0, 0, .6);
+}
+
+form button:hover {
+    background: #000;
+}
+
+/* LOADER */
+.custom-loader {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:8px solid;
+    border-color:#E4E4ED;
+    border-right-color: #101314;
+    animation:s2 1s infinite linear;
+}
+
+@keyframes s2 {to{transform: rotate(1turn)}}

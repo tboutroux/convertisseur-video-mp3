@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>YouTube to MP3 Converter</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='logo.webp') }}" alt="logo">
+            </a>
+            <h1>YouTube to MP3 Converter</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        {% if error_message %}
+            <div class="error-msg">
+                <p style="color: red;">{{ error_message }}</p>
+            </div>
+        {% endif %}
+        
+        <div class="form">
+
+            <form method="post">
+                <label for="video_url">URL de la vidéo YouTube:</label>
+                <input type="text" name="video_url" required>
+                <button type="submit">Convertir en MP3</button>
+            </form>
+    
+            <div class="loading" id="loading">
+                <div class="custom-loader"></div>
+            </div>
+
+        </div>
+
+        
+        {% if show_loader %}
+            <div class="download">
+                <div class="custom-loader"></div>
+            </div>
+        {% else %}
+            {% if download_link %}
+                <div class="download">
+                    <p class="download-text">Téléchargez votre fichier audio :</p>
+                    
+                    <div class="buttons">
+
+                        <a class="convert-another" href="/">Convertir une autre vidéo</a>
+                        <a href="{{ download_link }}" download>
+                            <button>Télécharger</button>
+                        </a>
+
+                    </div>
+                    
+                </div>
+            {% endif %}
+        {% endif %}
+
+    </div>
+
+    <script></script>
+</body>
+</html>
